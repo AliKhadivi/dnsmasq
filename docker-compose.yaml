@@ -1,0 +1,11 @@
+services:
+  dns:
+    restart: always
+    build: .
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    ports:
+      - "53:53/udp"
+    #cap_add:
+    #  - NET_ADMIN
+    
